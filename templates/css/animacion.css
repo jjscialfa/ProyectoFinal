@@ -1,0 +1,58 @@
+    body {
+        background-image: url('../img/tienda_virtual.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+
+    .navbar {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+    }
+
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar ul li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .navbar ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 5px;
+    }
+
+    .navbar ul li a:hover {
+        background-color: #666;
+    }
+
+    .tienda-virtual-animation {
+        animation-name: tienda-virtual-animation;
+        animation-duration: 4s;
+        animation-iteration-count: 1;
+    }
+    
+    @keyframes tienda-virtual-animation {
+        0% {
+            transform: translateX(100%);
+            opacity: 1;
+            color: #ffd699; /* Naranja pastel */
+        }
+        80% {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(0%);
+            opacity: 0;
+            color: #ffd699; /* Naranja pastel */
+        }
+    }
+        
