@@ -1,0 +1,29 @@
+.product-image {
+    width: 200px; /* Establece el ancho deseado */
+    height: 200px; /* Establece la altura deseada */
+    object-fit: cover; /* Ajusta la imagen para llenar el espacio sin deformarla */
+  }
+
+  .card {
+    background-color: #ffe5cc; /* Color de fondo pastel para las tarjetas */
+  }
+
+  .card-title {
+    color: #8a6d3b; /* Color de título en tono pastel */
+  }
+
+  .card-text {
+    color: #aa9977; /* Color de texto en tono pastel */
+  }
+
+  .btn-primary {
+    background-color: #ffd699; /* Color de fondo pastel para el botón primario */
+    border-color: #ffd699; /* Color de borde pastel para el botón primario */
+    color: #8a6d3b; /* Color de texto en tono pastel para el botón primario */
+  }
+
+  .btn-danger {
+    background-color: #ffcc99; /* Color de fondo pastel para el botón de peligro */
+    border-color: #ffcc99; /* Color de borde pastel para el botón de peligro */
+    color: #8a6d3b; /* Color de texto en tono pastel para el botón de peligro */
+  }
