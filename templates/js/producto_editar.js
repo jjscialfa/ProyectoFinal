@@ -11,7 +11,7 @@ createApp({
       imagen: "",
       stock: 0,
       precio: 0,
-      url: 'http://jjscialfa.pythonanywhere.com/productos/' + id,
+      url: 'https://jjscialfa.pythonanywhere.com/productos/' + id,
       nombreError: false,
       precioError: false,
       stockError: false,
