@@ -37,6 +37,7 @@
         animation-name: tienda-virtual-animation;
         animation-duration: 4s;
         animation-iteration-count: 1;
+        font-family: fantasy;
     }
     
     @keyframes tienda-virtual-animation {

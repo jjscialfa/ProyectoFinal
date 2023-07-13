@@ -11,10 +11,12 @@ createApp({
       imagen: "",
       stock: 0,
       precio: 0,
+      categoria: "",
       url: 'https://jjscialfa.pythonanywhere.com/productos/' + id,
       nombreError: false,
       precioError: false,
       stockError: false,
+      categoriaError: false
     };
   },
   methods: {
@@ -28,6 +30,7 @@ createApp({
           this.imagen = data.imagen;
           this.stock = data.stock;
           this.precio = data.precio;
+          this.categoria = data.categoria;
         })
         .catch(err => {
           console.error(err);
@@ -38,10 +41,16 @@ createApp({
       this.nombreError = false;
       this.precioError = false;
       this.stockError = false;
+      this.categoriaError = false;
 
       // Validar el nombre
       if (this.nombre.trim() === "") {
         this.nombreError = true;
+      }
+
+      // Validar el categoria
+      if (this.nombre.trim() === "") {
+        this.categoriaError = true;
       }
 
       // Validar el precio
@@ -61,6 +70,7 @@ createApp({
           precio: this.precio,
           stock: this.stock,
           imagen: this.imagen,
+          categoria: this.categoria
         };
         var options = {
           body: JSON.stringify(producto),
@@ -81,6 +91,9 @@ createApp({
         let mensajeError = "Se encontraron los siguientes errores:\n";
         if (this.nombreError) {
           mensajeError += "- El campo Nombre es obligatorio.\n";
+        }
+        if (this.categoriaError) {
+          mensajeError += "- El campo Categoria es obligatorio.\n";
         }
         if (this.precioError) {
           mensajeError += "- El campo Precio debe ser un valor numérico válido (mayor a cero).\n";

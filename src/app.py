@@ -19,11 +19,13 @@ class Producto(db.Model):   # la clase Producto hereda de db.Model
     nombre=db.Column(db.String(100))
     precio=db.Column(db.Integer)
     stock=db.Column(db.Integer)
+    categoria=db.Column(db.String(100))
     imagen=db.Column(db.String(400))
-    def __init__(self,nombre,precio,stock,imagen):   #crea el  constructor de la clase
+    def __init__(self,nombre,precio,stock,categoria,imagen):   #crea el  constructor de la clase
         self.nombre=nombre   # no hace falta el id porque lo crea sola mysql por ser auto_incremento
         self.precio=precio
         self.stock=stock
+        self.categoria=categoria
         self.imagen=imagen
 
 
@@ -35,7 +37,7 @@ with app.app_context():
 #  ************************************************************
 class ProductoSchema(ma.Schema):
     class Meta:
-        fields=('id','nombre','precio','stock','imagen')
+        fields=('id','nombre','precio','stock','categoria','imagen')
 
 
 producto_schema=ProductoSchema()            # El objeto producto_schema es para traer un producto
@@ -71,7 +73,8 @@ def create_producto():
     precio=request.json['precio']
     stock=request.json['stock']
     imagen=request.json['imagen']
-    new_producto=Producto(nombre,precio,stock,imagen)
+    categoria=request.json['categoria']
+    new_producto=Producto(nombre,precio,stock,categoria,imagen)
     db.session.add(new_producto)
     db.session.commit()
     return producto_schema.jsonify(new_producto)
@@ -83,6 +86,7 @@ def update_producto(id):
     producto.nombre=request.json['nombre']
     producto.precio=request.json['precio']
     producto.stock=request.json['stock']
+    producto.categoria=request.json['categoria']
     producto.imagen=request.json['imagen']
 
     db.session.commit()
