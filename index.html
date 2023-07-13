@@ -38,6 +38,7 @@
                 <h5 class="card-title">{{ producto.nombre }}</h5>
               </div>
             </div> -->
+            <section v-if="producto.categoria === 'Tecnologia'">
             <div class="card-group">
               <div class="card" id="cardDestacados">
                 <img :src="'./templates/' + producto.imagen"  class="card-img-top product-image" alt="producto.nombre" />
@@ -50,6 +51,7 @@
                 </div>
               </div>
             </div>
+          </section>
           </div>
         </div>
         </section>
