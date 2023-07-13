@@ -54,12 +54,12 @@ createApp({
       }
 
       // Validar el precio
-      if (isNaN(this.precio) || this.precio === null || this.precio == 0) {
+      if (isNaN(this.precio) || this.precio === null || this.precio <= 0) {
         this.precioError = true;
       }
 
       // Validar el stock
-      if (isNaN(this.stock) || this.stock === null) {
+      if (isNaN(this.stock) || this.stock === null || this.stock < 0) {
         this.stockError = true;
       }
 
@@ -99,7 +99,7 @@ createApp({
           mensajeError += "- El campo Precio debe ser un valor numérico válido (mayor a cero).\n";
         }
         if (this.stockError) {
-          mensajeError += "- El campo Stock debe ser un valor numérico válido.\n";
+          mensajeError += "- El campo Stock debe ser un valor numérico válido (mayor o igual a cero).\n";
         }
         alert(mensajeError);
       }
